@@ -1,0 +1,280 @@
+@import "../../Assets/colors.scss";
+@import "../../Assets/fontweightsandsizes.scss";
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+  @media only screen and (min-width: 600px) {
+    padding: 20px 40px;
+    .menuicon,
+    .overlay {
+      display: none;
+    }
+    .logo {
+      flex: 0.2;
+    }
+    .features-item,
+    .company-item {
+      position: absolute;
+      top: 80px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.1);
+      background-color: #fff;
+
+      li {
+        line-height: 2.4rem;
+      }
+    }
+    .features-item {
+      left: 240px;
+    }
+    .company-item {
+      left: 380px;
+    }
+    .navitems {
+      // background-color: aquamarine;
+      ul {
+        // background-color: aquamarine;
+      }
+      .buttons {
+        align-items: flex-end;
+        // background-color: blanchedalmond;
+        .login {
+          flex: 1;
+        }
+        .register {
+          flex: 0.4;
+        }
+      }
+    }
+  }
+
+  .navitems {
+    display: flex;
+    // background-color: aqua;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    ul {
+      flex: 0.8;
+    }
+    .buttons {
+      flex: 0.3;
+    }
+  }
+  ul {
+    flex: 1;
+    gap: 30px;
+    display: flex;
+    list-style-type: none;
+    #features,
+      // .features-item {
+      //   display: none;
+      // }
+      // [id^="features"]:checked + ul.features-item {
+      //   display: block;
+      // }
+      ul.features-item {
+      // margin: 0 0 0 1rem;
+    }
+
+    // company toggle starts here
+    // #company,
+    // .company-item {
+    //   display: none;
+    // }
+    // [id^="company"]:checked + ul.company-item {
+    //   display: block;
+    // }
+
+    // Ends here
+
+    li {
+      label,
+      a {
+        // text-decoration: none;
+        color: $MediumGray;
+      }
+    }
+  }
+  .buttons {
+    // flex: 1;
+    display: flex;
+    // padding: 10px 0;
+    button {
+      // width: 100%;
+      line-height: 2rem;
+      font-size: $defaultfont;
+      background: none;
+      text-transform: capitalize;
+      color: $MediumGray;
+      border: 1px solid $MediumGray;
+      border-radius: 10px;
+      margin: 0 0.5rem;
+      padding: 1px 20px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        font-weight: $bold;
+      }
+    }
+    .login {
+      border: none;
+    }
+  }
+  // section for screens with screen width less than 600px
+  @media only screen and (max-width: 600px) {
+    padding: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    // flex: 6;
+    .buttons {
+      flex-direction: column;
+      button {
+        flex: 1;
+        margin: 10px 0 0 0;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 0;
+      flex-direction: column;
+      list-style-type: none;
+    }
+    .logo {
+      flex-basis: 80%;
+      // background-color: red;
+    }
+
+    // Styling the menuicon on the right
+    .menuicon {
+      text-align: right;
+      display: flex;
+      align-self: flex-end;
+      font-size: 1.8rem;
+      font-weight: lighter;
+      flex-basis: 20%;
+      display: block;
+      position: relative;
+      z-index: 4;
+      color: $AlmostBlack;
+    }
+
+    // Styling the overlay at the back of the menu
+    .overlay {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .showNavMenu {
+      padding: 2rem;
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      right: 0;
+      width: 70%;
+      height: 100vh;
+      display: block;
+      flex-basis: 100%;
+      transition: all display 2s linear 100ms;
+      background-color: #fff;
+      ul.nav-items {
+        margin-top: 3.5rem;
+
+        .features,
+        .company {
+          display: flex;
+          align-items: center;
+          color: $MediumGray;
+
+          // .caretUp {
+          //   // align-self: flex-start;
+          //   text-align: left;
+          //   // background-color: red;
+          //   margin: 0 0 0 1rem;
+          //   // flex: 10;
+          // }
+        }
+        label {
+          line-height: 2.5rem;
+          display: block;
+        }
+        label,
+        li {
+          &:hover {
+            font-weight: $bold;
+          }
+          a {
+            display: block;
+            line-height: 2.5rem;
+            // line-height: 1rem;
+          }
+
+          // button {
+          //   width: 100%;
+          //   line-height: 2rem;
+          //   font-size: $defaultfont;
+          //   background: none;
+          //   text-transform: capitalize;
+          //   color: $MediumGray;
+          //   border: 1px solid $MediumGray;
+          //   border-radius: 10px;
+          //   margin: 0.5rem 0 0 0;
+          //   &:focus {
+          //     outline: none;
+          //   }
+          //   &:hover {
+          //     font-weight: $bold;
+          //   }
+          // }
+          // .login {
+          //   border: none;
+          // }
+        }
+        ul.features-item,
+        ul.company-item {
+          position: static;
+          top: 0;
+          // background-color: red;
+          margin: 0 0 0 1.8rem;
+          li {
+            display: flex;
+            align-items: center;
+          }
+        }
+        // Styling for the toggling of the features dropdown
+        #features,
+        .features-item {
+          display: none;
+        }
+        [id^="features"]:checked + ul.features-item {
+          display: block;
+        }
+        ul.features-item {
+          // margin: 0 0 0 1rem;
+        }
+        // Styling for the toggling of the compamny dropdown
+
+        #company,
+        .company-item {
+          display: none;
+        }
+        [id^="company"]:checked + ul.company-item {
+          display: block;
+        }
+      }
+    }
+    .hideNavMenu {
+      display: none;
+      transition: display 2s linear 100ms;
+    }
+  }
+}
